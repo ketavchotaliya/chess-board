@@ -1,0 +1,10 @@
+/mochawesome-report
+/node_modules
+/public
+/package-lock.json
+.idea/
+/log
+/logs
+READ.me
+*.yml
+*.sh
