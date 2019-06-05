@@ -32,9 +32,10 @@ The game of chess has **6 unique types of pieces**, with their own **unique type
 **Usage:** 
 
 1. To get the chess pieces movement follow the below steps.
+
     `i. Run the Server using node bin/index/js It will listen on http://localhost:8080`
     
-    `ii. Hit HTTP Request to URL http://localhost:8080/api/v1/chessBoard/ with GET method with given input set`  
+    `ii. Hit HTTP Request to URL http://localhost:8080/api/v1/chessBoard/ with POST method with given input set`  
     
     `iii. select 'Pawn' from given array. E.g. ['King', 'Queen', 'Bishop', 'Horse', 'Rook', 'Pawn']`
     
