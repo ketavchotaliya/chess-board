@@ -3,10 +3,11 @@
 const router = express.Router();
 // validator
 const chessBoardValidator = require('./chessBoardValidator');
+const chessBoardController = require('./chessBoardController');
 
 router.post('/', [ chessBoardValidator.chessBoardRouteValidate('input_validation'),
     chessBoardValidator.checkValidationResult ], (req, res, next) => {
-    res.send('Response send!')
+    chessBoardController.getPossibleMoves(req, res)
 });
 
 module.exports = router;

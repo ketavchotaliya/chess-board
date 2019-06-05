@@ -6,6 +6,10 @@ module.exports = {
     INVALID_REQUEST: 'Your request is invalid!!',
     UNAUTHORIZED_ACCESS: 'Unauthorised access!',
 
+    POSIBLE_MOVE_FOR_FROM: (piece, position) => {
+      return `Possible moves for ${piece} on position ${position}`
+    },
+
     /**
      * It will return required field message
      *
