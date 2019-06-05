@@ -4,12 +4,13 @@ module.exports = {
   getPossibleMoves: async (req, res) => {
     try {
       const piece = req.body.piece.toLowerCase();
-      const position_row = req.body.position_raw;
+      const position_row = req.body.position_raw.toLowerCase();
       const position_col = req.body.position_col;
       let possibleMoves = [];
 
       switch (piece) {
         case "king":
+          possibleMoves = await require('./Pieces/King')(position_row, position_col);
           break;
         case "queen":
           break;
