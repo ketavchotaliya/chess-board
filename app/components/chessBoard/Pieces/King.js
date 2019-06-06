@@ -6,9 +6,9 @@ async function findPosition(row, col) {
         for (let j = -1; j <= 1; j++) {
             if (row - i != 0)
                 if (col - j > 0 && col - j <= 8)
-                    if (!(helpers.getRowLetters(row - i) == helpers.getRowLetters(row)
+                    if (!(helpers.getColumnLetters(row - i) == helpers.getColumnLetters(row)
                         && (col - j) == col))
-            valid_moves.push(helpers.getRowLetters(row - i) + (col - j));
+            valid_moves.push(helpers.getColumnLetters(row - i) + (col - j));
         }
     }
 
@@ -16,7 +16,7 @@ async function findPosition(row, col) {
 }
 
 module.exports = async (positionRow, positionCol) => {
-    const rowNumber = helpers.getRowNumbers(positionRow);
+    const rowNumber = helpers.getColumnNumbers(positionRow);
     const colNumber = positionCol;
 
     return await findPosition(rowNumber, colNumber);

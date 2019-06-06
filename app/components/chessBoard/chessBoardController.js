@@ -4,8 +4,8 @@ module.exports = {
   getPossibleMoves: async (req, res) => {
     try {
       const piece = req.body.piece.toLowerCase();
-      const position_row = req.body.position_raw.toUpperCase();
-      const position_col = parseInt(req.body.position_col);
+      const position_col = parseInt(req.body.position_raw);
+      const position_row = req.body.position_col.toUpperCase();
       let possibleMoves = [];
 
       switch (piece) {
@@ -15,6 +15,7 @@ module.exports = {
         case "queen":
           break;
         case "bishop":
+          possibleMoves = await require('./Pieces/Bishop')(position_row, position_col);
           break;
         case "horse":
           break;
