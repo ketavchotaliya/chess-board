@@ -8,7 +8,7 @@ module.exports = {
         const result = validationResult(req);
 
         if (!result.isEmpty()) {
-            helpers.createResponse(res, constants.UNPROCESSED,
+            helpers.createResponse(res, constants.http_status_code.UNPROCESSED,
                 result.array()[ 0 ].msg, {}
             );
             return;

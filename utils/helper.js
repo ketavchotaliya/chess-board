@@ -31,16 +31,7 @@ module.exports = {
     },
 
     getRowNumbers: (position) => {
-        const rowPosition = {
-            a: 1,
-            b: 2,
-            c: 3,
-            d: 4,
-            e: 5,
-            f: 6,
-            g: 7,
-            h: 8
-        };
+        const rowPosition = constants.getRowPosition;
         try {
             return rowPosition[position]
         } catch (err) {
@@ -50,16 +41,7 @@ module.exports = {
     },
 
     getRowLetters: (position) => {
-        const rowPosition = {
-            1: 'A',
-            2: 'B',
-            3: 'C',
-            4: 'D',
-            5: 'E',
-            6: 'F',
-            7: 'G',
-            8: 'H'
-        };
+        const rowPosition = underscoreObj.invert(constants.getRowPosition);
         try {
             return rowPosition[position]
         } catch (err) {
