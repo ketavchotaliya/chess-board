@@ -30,22 +30,22 @@ module.exports = {
         }
     },
 
-    getColumnNumbers: (position) => {
-        const rowPosition = constants.getColumnPosition;
+    getRowNumbers: (position) => {
+        const rowPosition = constants.getRowPosition;
         try {
             return rowPosition[position]
         } catch (err) {
-            console.error(__filename, 'getColumnNumbers', err.stack);
+            console.error(__filename, 'getRowNumbers', err.stack);
             throw err;
         }
     },
 
-    getColumnLetters: (position) => {
-        const rowPosition = underscoreObj.invert(constants.getColumnPosition);
+    getRowLetters: (position) => {
+        const rowPosition = underscoreObj.invert(constants.getRowPosition);
         try {
             return rowPosition[position]
         } catch (err) {
-            console.error(__filename, 'getColumnLetters', err.stack);
+            console.error(__filename, 'getRowLetters', err.stack);
             throw err;
         }
     }

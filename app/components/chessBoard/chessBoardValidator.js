@@ -21,8 +21,8 @@ module.exports = {
         switch (method) {
             case 'input_validation':
                 const validPiece = [ 'King', 'Queen', 'Bishop', 'Horse', 'Rook', 'Pawn' ];
-                const validRow = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
-                const validColumn = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H' ];
+                const validRow = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H' ];
+                const validColumn = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
                 return [
                     check('piece').isLength({ min: 1 })
                         .withMessage(messages.checkIfRequired('Piece'))

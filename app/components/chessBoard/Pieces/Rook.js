@@ -1,9 +1,9 @@
 'use strict'
 
-async function findPosition(row, col) {
 
     let valid_moves = [];
-    const row_letters = helpers.getObjectValues(constants.getColumnPosition);
+    async function findPosition(row, col) {
+    const row_letters = helpers.getObjectValues(constants.getRowPosition);
 
     for (let i of row_letters) {
         if (i == row) {
