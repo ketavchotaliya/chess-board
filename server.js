@@ -10,6 +10,7 @@ global.config = require('./configuration/config');
 global.constants = require('./utils/constants');
 global.helpers = require('./utils/helper');
 global.messages = require('./utils/messages');
+global.underscoreObj = require('underscore');
 
 
 console.info(`Application is runnign at port :${config.get('server.port')}`);
@@ -34,7 +35,7 @@ app.use('/api/v1/', require('./routes/index'));
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   var err = new Error('Bad Request');
-  err.status = constants.NOT_FOUND;
+  err.status = constants.http_status_code.NOT_FOUND;
   next(err);
 });
 
@@ -54,7 +55,7 @@ function exitHandler () {
 app.use((err, req, res, next) => {
   console.error(__filename, '', 'last error handled', err.stack);
   console.debug(__filename, 'server error handle', req.method, req.url);
-  var statusCode = err.status || constants.SERVER_ERROR;
+  var statusCode = err.status || constants.http_status_code.SERVER_ERROR;
 
   helpers.createResponse(res, statusCode,
     messages.INTERNAL_SERVER_ERROR,
