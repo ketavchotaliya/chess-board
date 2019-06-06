@@ -24,6 +24,7 @@ module.exports = {
                     possibleMoves = await require('./Pieces/Rook')(position_row, position_col);
                     break;
                 case "pawn":
+                    possibleMoves = await require('./Pieces/Pawn')(position_row, position_col);
                     break;
             }
 
