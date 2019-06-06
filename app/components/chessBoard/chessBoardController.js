@@ -13,6 +13,7 @@ module.exports = {
                     possibleMoves = await require('./Pieces/King')(position_row, position_col);
                     break;
                 case "queen":
+                    possibleMoves = await require('./Pieces/Queen')(position_row, position_col);
                     break;
                 case "bishop":
                     possibleMoves = await require('./Pieces/Bishop')(position_row, position_col);

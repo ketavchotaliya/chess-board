@@ -32,8 +32,8 @@ async function findPosition(row, col) {
 }
 
 module.exports = async (positionRow, positionCol) => {
-    const colNumber = helpers.getRowNumbers(positionRow);
-    const rowNumber = positionCol;
+    const rowNumber = helpers.getRowNumbers(positionRow);
+    const colNumber = positionCol;
 
     return await findPosition(rowNumber, colNumber);
 }
