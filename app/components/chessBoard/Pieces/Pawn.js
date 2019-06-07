@@ -9,7 +9,7 @@
  */
 
 let valid_moves = [];
-async function findPosition(row, col) {
+function findPosition(row, col) {
 
     if (col != 1 && col != 8) {
         valid_moves.push(helpers.getRowLetters(row)+(col + 1));
@@ -19,9 +19,9 @@ async function findPosition(row, col) {
     return valid_moves;
 }
 
-module.exports = async (positionRow, positionCol) => {
+module.exports = (positionRow, positionCol) => {
     const rowNumber = helpers.getRowNumbers(positionRow);
     const colNumber = positionCol;
 
-    return await findPosition(rowNumber, colNumber);
+    return findPosition(rowNumber, colNumber);
 }

@@ -11,7 +11,7 @@
  */
 
 // function that find the possible moves based on given input
-async function findPosition(row, col) {
+function findPosition(row, col) {
     let valid_moves = [];
     /**
      * possibilities array for house movement
@@ -43,10 +43,10 @@ async function findPosition(row, col) {
     return valid_moves;
 }
 
-module.exports = async (positionRow, positionCol) => {
+module.exports = (positionRow, positionCol) => {
     // get Row number from Row key (e.g. A, B, C)
     const rowNumber = helpers.getRowNumbers(positionRow);
     const colNumber = positionCol;
 
-    return await findPosition(rowNumber, colNumber);
+    return findPosition(rowNumber, colNumber);
 }

@@ -8,7 +8,7 @@
  * @return array
  */
 
-async function findPosition(row, col) {
+function findPosition(row, col) {
     let valid_moves = []
     for (let i = -1; i <= 1; i++) {
         for (let j = -1; j <= 1; j++) {
@@ -23,9 +23,9 @@ async function findPosition(row, col) {
     return valid_moves;
 }
 
-module.exports = async (positionRow, positionCol) => {
+module.exports = (positionRow, positionCol) => {
     const rowNumber = helpers.getRowNumbers(positionRow);
     const colNumber = positionCol;
 
-    return await findPosition(rowNumber, colNumber);
+    return findPosition(rowNumber, colNumber);
 }

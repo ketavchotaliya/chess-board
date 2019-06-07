@@ -10,9 +10,8 @@
  * @return array
  */
 
-let valid_moves = [];
-
 async function findPosition(positionRow, positionCol) {
+    let valid_moves = [];
     const rookMovement = await require('../Pieces/Rook')(positionRow, positionCol);
     const bishopMovement = await require('../Pieces/Bishop')(positionRow, positionCol);
 
