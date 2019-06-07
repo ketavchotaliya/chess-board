@@ -8,8 +8,10 @@
  * @return array
  */
 
+module.exports = (positionRow, positionCol) => {
+    const row = helpers.getRowNumbers(positionRow);
+    const col = positionCol;
 
-function findPosition(row, col) {
     let valid_moves = [];
     const row_letters = helpers.getObjectValues(constants.getRowPosition);
 
@@ -25,11 +27,4 @@ function findPosition(row, col) {
     }
 
     return valid_moves;
-}
-
-module.exports = (positionRow, positionCol) => {
-    const rowNumber = helpers.getRowNumbers(positionRow);
-    const colNumber = positionCol;
-
-    return findPosition(rowNumber, colNumber);
 }

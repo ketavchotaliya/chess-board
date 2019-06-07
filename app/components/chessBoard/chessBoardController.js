@@ -10,22 +10,22 @@ module.exports = {
 
             switch (piece) {
                 case "king":
-                    possibleMoves = await require('./Pieces/King')(position_row, position_col);
+                    possibleMoves = require('./Pieces/King')(position_row, position_col);
                     break;
                 case "queen":
-                    possibleMoves = await require('./Pieces/Queen')(position_row, position_col);
+                    possibleMoves = require('./Pieces/Queen')(position_row, position_col);
                     break;
                 case "bishop":
-                    possibleMoves = await require('./Pieces/Bishop')(position_row, position_col);
+                    possibleMoves = require('./Pieces/Bishop')(position_row, position_col);
                     break;
                 case "horse":
-                    possibleMoves = await require('./Pieces/Horse')(position_row, position_col);
+                    possibleMoves = require('./Pieces/Horse')(position_row, position_col);
                     break;
                 case "rook":
-                    possibleMoves = await require('./Pieces/Rook')(position_row, position_col);
+                    possibleMoves = require('./Pieces/Rook')(position_row, position_col);
                     break;
                 case "pawn":
-                    possibleMoves = await require('./Pieces/Pawn')(position_row, position_col);
+                    possibleMoves = require('./Pieces/Pawn')(position_row, position_col);
                     break;
             }
 
@@ -33,13 +33,12 @@ module.exports = {
                 messages.POSIBLE_MOVE_FOR_FROM(piece,
                     (`${position_row}${position_col}`)), {
                     data: possibleMoves
-                })
+            });
 
         } catch (e) {
-            console.error(__filename, 'getPossibleMoves', e.stack)
+            console.error(__filename, 'getPossibleMoves', e.stack);
             helpers.createResponse(res, constants.http_status_code.INTERNAL_SERVER_ERROR,
-                messages.SERVER_ERROR_MESSAGE, {})
-            return
+                messages.SERVER_ERROR_MESSAGE, {});
         }
     }
 }
