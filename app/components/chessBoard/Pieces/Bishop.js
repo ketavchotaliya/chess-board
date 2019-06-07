@@ -1,4 +1,12 @@
-'use strict'
+'use strict';
+
+/**
+ * A file Queen.js will provide the all the possible moves from given input.
+ * The bishop can be moved any number of unoccupied squares in diagonally.
+ * We have to find all the possible locations the Bishop can move to from the given location.
+ * @param positionRow <string>, positionCol <number>
+ * @return array
+ */
 
 async function findPosition(row, col) {
 

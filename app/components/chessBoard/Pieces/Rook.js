@@ -1,8 +1,16 @@
-'use strict'
+'use strict';
+
+/**
+ * A file Rook.js will provide the all the possible moves from given input.
+ * The rook moves horizontally or vertically, through any number of squares
+ * We have to find all the possible locations the rook can move to from the given location.
+ * @param positionRow <string>, positionCol <number>
+ * @return array
+ */
 
 
+async function findPosition(row, col) {
     let valid_moves = [];
-    async function findPosition(row, col) {
     const row_letters = helpers.getObjectValues(constants.getRowPosition);
 
     for (let i of row_letters) {

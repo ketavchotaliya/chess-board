@@ -1,5 +1,12 @@
-'use strict'
+'use strict';
 
+/**
+ * A file Pawn.js will provide the all the possible moves from given input.
+ * The pawn can only move one space forward
+ * We have to find all the possible locations the pawn can move to from the given location.
+ * @param positionRow <string>, positionCol <number>
+ * @return array
+ */
 
 let valid_moves = [];
 async function findPosition(row, col) {
