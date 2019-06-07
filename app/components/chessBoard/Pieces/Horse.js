@@ -7,10 +7,11 @@ async function findPosition(row, col) {
     const colStepsArray = [ -1, 1, 1, -1, 2, -2, 2, -2 ];
 
     for (let i = 0; i <= 7; i++) {
-        valid_moves.push(
-            helpers.getRowLetters(row + rowStepsArray[ i ]) +
-            ( col + colStepsArray[ i ] )
-        )
+        let estimatedRowPositoin = row + rowStepsArray[ i ];
+        let estimatedColPositoin = col + colStepsArray[ i ];
+        if ( (estimatedRowPositoin > 0 && estimatedRowPositoin <= 8) && (estimatedColPositoin > 0 && estimatedColPositoin <= 8) ) {
+            valid_moves.push(helpers.getRowLetters(estimatedRowPositoin) + estimatedColPositoin )
+        }
     }
 
     return valid_moves;
