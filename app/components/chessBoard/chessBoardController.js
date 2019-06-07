@@ -19,6 +19,7 @@ module.exports = {
                     possibleMoves = await require('./Pieces/Bishop')(position_row, position_col);
                     break;
                 case "horse":
+                    possibleMoves = await require('./Pieces/Horse')(position_row, position_col);
                     break;
                 case "rook":
                     possibleMoves = await require('./Pieces/Rook')(position_row, position_col);
