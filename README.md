@@ -34,14 +34,23 @@ The game of chess has **6 unique types of pieces**, with their own **unique type
 1. This application is built on Node.JS (express.js framework) as well as we used some additional packages for security purpose and unit testing purpose.
     
     `i. express - Node.JS Framework`
+    
     `ii. express-validator - Request validator`
+    
     `iii. helmet - Helmet helps you secure your Express apps by setting various HTTP headers.`
+    
     `iv. underscore - Underscore.js is a utility-belt library for JavaScript`
+    
     `v. chai - devDependency - Chai.js is a javascript test framework`
+    
     `vi. chai-http - devDependency - chai-http is used for create http request for unit test`
+    
     `vi. chai-http - devDependency - chai-http is used for create http request for unit test`
+    
     `vii. express-swagger-generator - devDependency - It is used for generating a API documentation`
+    
     `viii. mochawesome - devDependency - Mochawesome is a custom reporter for use with the Javascript testing framework.`
+    
     `ix. standard - devDependency - Standard is a JavaScript style guide.`
     
 **Usage:** 
