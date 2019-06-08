@@ -4,7 +4,6 @@ global.express = require('express');
 global.expressValidator = require('express-validator');
 global.helmet = require('helmet'); // security package
 global.BASE_PATH = __dirname;
-global.moment = require('moment');
 // configuration file
 global.config = require('./configuration/config');
 global.Constants = require('./utils/Constants');
