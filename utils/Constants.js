@@ -52,6 +52,18 @@ class Constants {
             H: 8
         }
     }
+
+    static validPiece() {
+        return [ 'King', 'Queen', 'Bishop', 'Horse', 'Rook', 'Pawn' ];
+    }
+
+    static validRow() {
+        return [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H' ];
+    }
+
+    static validColumn() {
+        return [ 1, 2, 3, 4, 5, 6, 7, 8 ];
+    }
 }
 
 // HTTP Status codes
