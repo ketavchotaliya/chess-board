@@ -33,7 +33,9 @@ The game of chess has **6 unique types of pieces**, with their own **unique type
 
 1. To get the chess pieces movement follow the below steps.
 
-    `i. Run the Server using 'node bin/index/js' command. It will listen on http://localhost:8080`
+    `i. Install the dependencies using npm install command`
+    
+    `ii. Run the Server using 'npm start' command. It will listen on http://localhost:8080`
     
     `ii. Hit HTTP Request to URL http://localhost:8080/api/v1/chessBoard/ with POST method with given input parameters`  
     
