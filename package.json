@@ -4,7 +4,8 @@
   "description": "ChessBoard software",
   "main": "./bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node bin/index.js",
+    "test": "mocha --recursive --reporter mochawesome spec app/**/*.spec.js --timeout 15000"
   },
   "author": "https://github.com/ketavchotaliya",
   "license": "ISC",
