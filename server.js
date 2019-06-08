@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 global.express = require('express');
 global.expressValidator = require('express-validator');
@@ -7,20 +7,20 @@ global.BASE_PATH = __dirname;
 global.moment = require('moment');
 // configuration file
 global.config = require('./configuration/config');
-global.constants = require('./utils/constants');
-global.helpers = require('./utils/helper');
+global.Constants = require('./utils/Constants');
+global.helpers = require('./utils/Helper');
 global.messages = require('./utils/messages');
 global.underscoreObj = require('underscore');
+
+const app = express(); // create an instance of an express
+
+const SwaggerApiDoc = require('./utils/SwaggerApiDoc');
+new SwaggerApiDoc(app);
 
 
 console.info(`Application is runnign at port :${config.get('server.port')}`);
 
 console.info(`Swagger Doc is running at :${config.get('server.host')}:${config.get('server.port')}/api-docs/#/`);
-
-const app = express(); // create an instance of an express
-
-// create an instance of swagger-ui for api-doc
-require('./lib/swaggerApiDoc')(app);
 
 app.use(express.json({ limit: '1000mb' }));
 // app.use(express.urlencoded({ limit: '1000mb' }))
@@ -35,7 +35,7 @@ app.use('/api/v1/', require('./routes/index'));
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   var err = new Error('Bad Request');
-  err.status = constants.http_status_code.NOT_FOUND;
+  err.status = Constants.httpStatusCode().NOT_FOUND;
   next(err);
 });
 
@@ -55,7 +55,7 @@ function exitHandler () {
 app.use((err, req, res, next) => {
   console.error(__filename, '', 'last error handled', err.stack);
   console.debug(__filename, 'server error handle', req.method, req.url);
-  var statusCode = err.status || constants.http_status_code.SERVER_ERROR;
+  var statusCode = err.status || Constants.httpStatusCode().SERVER_ERROR;
 
   helpers.createResponse(res, statusCode,
     messages.INTERNAL_SERVER_ERROR,

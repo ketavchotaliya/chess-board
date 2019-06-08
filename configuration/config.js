@@ -34,7 +34,7 @@ let config = convict({
         host: {
             doc: 'HTTP port to bind',
             format: String,
-            default: 'http://localhost',
+            default: 'localhost',
             env: 'PORT'
         },
         bodyParser: {
@@ -62,6 +62,6 @@ let config = convict({
 config.loadFile(`${__dirname}/config-${config.get('env')}.json`);
 
 // validate
-config.validate()
+config.validate();
 
 module.exports = config;

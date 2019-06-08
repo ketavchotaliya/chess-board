@@ -9,10 +9,18 @@
  * @param positionRow <string>, positionCol <number>
  * @return array
  */
+const Bishop = require('./Bishop');
+const Rook = require('./Rook');
 
-module.exports = (positionRow, positionCol) => {
-    const rookMovement = require('../Pieces/Rook')(positionRow, positionCol);
-    const bishopMovement = require('../Pieces/Bishop')(positionRow, positionCol);
+class Queen {
+    static findPosition(positionRow, positionCol) {
 
-    return underscoreObj.union(rookMovement, bishopMovement);
+        const rookMovement = Rook.findPosition(positionRow, positionCol);
+        const bishopMovement = Bishop.findPosition(positionRow, positionCol);
+
+        return underscoreObj.union(rookMovement, bishopMovement);
+
+    }
 }
+
+module.exports = Queen;
